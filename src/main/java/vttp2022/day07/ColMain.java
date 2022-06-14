@@ -14,7 +14,7 @@ public class ColMain {
 
         System.out.println(myList);
 
-        
+        int result = 0;
         int count =0;
         for (int i = 0 ; i < myList.size() ; i++) {
         int v = myList.get(i);
@@ -23,14 +23,20 @@ public class ColMain {
         continue;
         //map
         System.out.printf(" %d\n", myList.get(i)+1);
+        result += myList.get(i);
         }
+
+        System.out.println("result=" + result);
         
+        /* 
         List<String> intList = myList.stream()
         .filter(v -> 0 == (v%2))
         .map(v -> Integer.toString(v))
         .toList();
-
+        
         System.out.println(intList);
+        */
+        
         // .forEach((value) -> {
         //     System.out.printf("forEach %d\n", value);
         });
