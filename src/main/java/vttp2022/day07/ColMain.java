@@ -14,12 +14,17 @@ public class ColMain {
 
         System.out.println(myList);
 
-
-        for (int i = 0 ; i < myList.size() ; i++)
+        
+        for (int i = 0 ; i < myList.size() ; i++) {
+        int v = myList.get(i);
+        //filter
+        if (0 != (v%2))
+        continue;
         System.out.printf(" %d\n", myList.get(i));
-
+        }
         myList.stream()
-        .forEach((value)->{
+        .filter(v -> 0 == (v%2))
+        .forEach((value) -> {
             System.out.printf("forEach %d\n", value);
         });
     }
