@@ -14,7 +14,7 @@ public class ColMain {
 
         System.out.println(myList);
 
-        int result = 0;
+        int result = 0; //identity - initial value
         int count =0;
         for (int i = 0 ; i < myList.size() ; i++) {
         int v = myList.get(i);
@@ -23,19 +23,21 @@ public class ColMain {
         continue;
         //map
         System.out.printf(" %d\n", myList.get(i)+1);
-        result += myList.get(i);
+        result += myList.get(i); //intermediate result and the new value and what you want to do with it
         }
 
         System.out.println("result=" + result);
         
          
-        List<String> intList = myList.stream()
+        int sumOfMyList = myList.stream()
         .filter(v -> 0 == (v%2))
         .map(v -> v+1)
-        .reduce(0,(x,y) -> x+y)
-        .toList();
+        .reduce(0,(x,y) -> {
+            System.out.printf("x: %d, y :%d\n", x, y);
+            return x+y;
+        });
         
-        System.out.println(intList);
+        System.out.printf("sumOfMyList : %d\n", sumOfMyList);
         
         
         // .forEach((value) -> {
