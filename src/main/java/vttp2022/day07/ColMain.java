@@ -9,23 +9,30 @@ public class ColMain {
     public static void main(String[] args) {
         Random rand = new SecureRandom();
         List<Integer> myList = new LinkedList<>();
-        for (int i = 0 ; i <5 ; i++) 
+        for (int i = 0 ; i <100 ; i++) 
         myList.add(rand.nextInt(100));
 
         System.out.println(myList);
 
         
+        int count =0;
         for (int i = 0 ; i < myList.size() ; i++) {
         int v = myList.get(i);
         //filter
         if (0 != (v%2))
         continue;
-        System.out.printf(" %d\n", myList.get(i));
+        //map
+        System.out.printf(" %d\n", myList.get(i)+1);
         }
-        myList.stream()
+        
+        List<String> intList = myList.stream()
         .filter(v -> 0 == (v%2))
-        .forEach((value) -> {
-            System.out.printf("forEach %d\n", value);
+        .map(v -> Integer.toString(v))
+        .toList();
+
+        System.out.println(intList);
+        // .forEach((value) -> {
+        //     System.out.printf("forEach %d\n", value);
         });
     }
 }
