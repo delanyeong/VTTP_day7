@@ -28,6 +28,16 @@ public class ColMain {
 
         System.out.println("result=" + result);
         
+        List<Integer> intList = myList.stream()
+        .filter(v -> 0 == (v%2))
+        .map(v -> v+1)
+        .toList();
+        
+        
+        System.out.println(intList);
+
+
+
          
         int sumOfMyList = myList.stream()
         .filter(v -> 0 == (v%2))
