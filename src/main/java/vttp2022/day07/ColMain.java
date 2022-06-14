@@ -22,7 +22,7 @@ public class ColMain {
         if (0 != (v%2))
         continue;
         //map
-        System.out.printf(" %d\n", myList.get(i)+1);
+        // System.out.printf(" %d\n", myList.get(i)+1);
         result += myList.get(i); //intermediate result and the new value and what you want to do with it
         }
 
@@ -43,7 +43,7 @@ public class ColMain {
         .filter(v -> 0 == (v%2))
         .map(v -> v+1)
         .reduce(0,(x,y) -> {
-            System.out.printf("x: %d, y :%d\n", x, y);
+            // System.out.printf("x: %d, y :%d\n", x, y);
             return x+y;
         });
         
