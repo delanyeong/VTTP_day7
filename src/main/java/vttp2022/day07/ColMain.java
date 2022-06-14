@@ -28,17 +28,18 @@ public class ColMain {
 
         System.out.println("result=" + result);
         
-        /* 
+         
         List<String> intList = myList.stream()
         .filter(v -> 0 == (v%2))
-        .map(v -> Integer.toString(v))
+        .map(v -> v+1)
+        .reduce(0,(x,y) -> x+y)
         .toList();
         
         System.out.println(intList);
-        */
+        
         
         // .forEach((value) -> {
         //     System.out.printf("forEach %d\n", value);
-        });
+        //});
     }
 }
